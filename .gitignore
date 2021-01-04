@@ -1,3 +1,63 @@
-model/checkpoint
-model/cifar10_model.data-00000-of-00001
-model/cifar10_model.index
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+ 
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+ 
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+ 
+# OS generated files #
+######################
+.DS_Store*
+ehthumbs.db
+Icon?
+Thumbs.db
+
+
+
+
+# Model File #
+######################
+*.h5
+*.hdf5
+
+# directory#
+##########################
+graph/
+data/
+model/
+save/
+self/m_test.py
+image_classifier/
+checkpoint
+model.data-00000-of-00001
+model.index
+
+
+# pycache #
+######################
+*.pyc
+*.json
+*.csv
+*.npy 
+*.npz 
