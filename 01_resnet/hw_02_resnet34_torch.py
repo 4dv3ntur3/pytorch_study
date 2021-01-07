@@ -32,12 +32,14 @@ class SimpleResNet(nn.Module):
 
         self.relu = nn.ReLU()
 
+        # conv1
         self.conv0 = nn.Sequential(
-            nn.Conv2d(in_channels=3, out_channels=16, kernel_size=3, padding=1, stride=1, bias=False),
-            nn.BatchNorm2d(16),
+            nn.Conv2d(in_channels=3, out_channels=64, kernel_size=7, padding=1, stride=2, bias=False),
+            nn.BatchNorm2d(64),
             nn.ReLU(),
         )
 
+        # conv2 
         self.block11 = nn.Sequential(
             nn.Conv2d(in_channels=16, out_channels=16, kernel_size=3, padding=1, stride=1, bias=False),
             nn.BatchNorm2d(16),
@@ -89,12 +91,13 @@ class SimpleResNet(nn.Module):
             nn.Conv2d(in_channels=64, out_channels=64, kernel_size=3, padding=1, stride=1, bias=False),
             nn.BatchNorm2d(64),
         )
-
+        
         self.avg_pool = nn.AvgPool2d(8)
         # self.flatten = nn.Flatten()
         self.fc = nn.Linear(64, 10)
 
     def forward(self, x):
+
         batch = x.size(0)
         out0 = self.conv0(x)
 
